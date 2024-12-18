@@ -60,9 +60,8 @@ IATA and Bureau of Transportation Statistics guidelines provided the benchmarks 
 
 ### R codes used for Data Analysis
 
-R```
-#### call library ####
 
+```#### call library 
 library(readxl)
 library(tidyr)
 library(ggplot2)
@@ -77,8 +76,8 @@ setwd("C:/Users/david/OneDrive/Documents/Airline")
 airline <- read_excel("airline-12.xlsx")
 
 #### Inspect data/data preparation ####
-# 27345 observations and 10 variables
-str(airline)
+#### 27345 observations and 10 variables
+```str(airline)
 summary(airline)
 
 airline<- airline %>% filter(route !="NA")
@@ -145,7 +144,7 @@ skim(airline)
       scale_fill_manual(values = c("darkred", "darkgreen")) +
       labs(title = "Departure", subtitle = "by business and leisure flights", x = "flight", y = "Number of flights") +
       theme(legend.title = element_blank()) + 
-      theme_minimal()
+      theme_minimal()```
       
     
 
