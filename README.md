@@ -70,7 +70,7 @@ library(skimr)
 library(RColorBrewer)
 
 #### set working directory ####
-setwd("C:/Users/david/OneDrive/Documents/Airline")
+setwd("C:/Users/HP/OneDrive/Documents/Airline")
 
 #### load data ####
 airline <- read_excel("airline-12.xlsx")
