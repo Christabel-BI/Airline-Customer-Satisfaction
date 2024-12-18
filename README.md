@@ -21,24 +21,30 @@ Only 53% of flights meet the industry benchmark for on-time departures (≤15 mi
 ![image](https://github.com/user-attachments/assets/898e112c-9eca-46c8-a9c4-bee4c1482eee)
 
 - Connecting vs. Direct Flights:
-Delayed departures are more prevalent in connecting flights (62.5%) than in direct flights (45%), highlighting operational inefficiencies in handling transit passengers and cargo.
-![image](https://github.com/user-attachments/assets/e44e7209-1716-454e-8280-5c5294c8a29a)
+Delayed departures are more prevalent in connecting flights (62.5%) than in direct flights (45%),
+highlighting operational inefficiencies in handling transit passengers and cargo.
 
+   ![image](https://github.com/user-attachments/assets/f33bcc15-9817-4d9d-b07c-d33e4df8e06d)
 
 - Business vs. Leisure Flights:
 Business flights exhibit a higher proportion of delays (60%) compared to leisure flights (44%), possibly due to scheduling flexibilities catered to business travelers.
 
+![image](https://github.com/user-attachments/assets/c3dea119-6f86-44b0-8079-a802b23d0240)
+
 - Flight Categories:
-"City Hopper" flights have the highest number of delays (~4,800), followed by intercontinental (~4,200) and holiday flights (~1,000), emphasizing route-specific challenges.
+"City Hopper" flights have the highest number of delays (4,800), followed by intercontinental (4,200) and holiday flights (1,000), emphasizing route-specific challenges.
+
+![image](https://github.com/user-attachments/assets/c9b4fcd9-5149-43e8-9f18-bb35ab20e594)
 
 ### Recommendations
 
 - Chartered Planes for Business Travelers:
 Introduce chartered planes to reduce delays for premium-paying business customers, without disrupting schedules for other passengers.
-Operational Enhancements:
 
-- Allocate additional aircraft for short-haul and intercontinental routes to address capacity constraints.
-Process Optimization:
+- Operational Enhancements:
+Allocate additional aircraft for short-haul and intercontinental routes to address capacity constraints.
+
+- Process Optimization:
 Streamline critical processes, including immigration, refueling, and maintenance, to minimize delays.
 
 - Future Research:
@@ -46,8 +52,8 @@ Expand data collection to include external factors like weather, crew scheduling
 
 ### Tools Used in the Analysis
 
-- Dplyr and tidyr were used to clean the dataset of 25,574 observations, ensuring the data was accurate and ready for analysis.
+- Dplyr and tidyr were used to clean and explore the dataset of 25,574 observations, ensuring the data was accurate and ready for analysis.
 - ggplot 2 was used for data visualization.
 
-##### Industry Standards Reference:
+#### Industry Standards Reference:
 IATA and Bureau of Transportation Statistics guidelines provided the benchmarks for on-time and delayed flights
