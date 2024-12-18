@@ -20,10 +20,10 @@ Analyze flight departure data to:
 Only 53% of flights meet the industry benchmark for on-time departures (≤15 minutes from the scheduled time).
 ![image](https://github.com/user-attachments/assets/898e112c-9eca-46c8-a9c4-bee4c1482eee)
 
-
-
 - Connecting vs. Direct Flights:
 Delayed departures are more prevalent in connecting flights (62.5%) than in direct flights (45%), highlighting operational inefficiencies in handling transit passengers and cargo.
+![image](https://github.com/user-attachments/assets/e44e7209-1716-454e-8280-5c5294c8a29a)
+
 
 - Business vs. Leisure Flights:
 Business flights exhibit a higher proportion of delays (60%) compared to leisure flights (44%), possibly due to scheduling flexibilities catered to business travelers.
