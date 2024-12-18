@@ -18,8 +18,7 @@ Analyze flight departure data to:
 
 - Current Performance:
 Only 53% of flights meet the industry benchmark for on-time departures (≤15 minutes from the scheduled time).
-![image](https://github.com/user-attachments/assets/f80d06c9-1efc-4c7a-8b4c-bf49f3f99bf1)
-
+![image](https://github.com/user-attachments/assets/0271b8ec-f777-47a6-acba-ad27ad51fde3)
 
 - Connecting vs. Direct Flights:
 Delayed departures are more prevalent in connecting flights (62.5%) than in direct flights (45%),
