@@ -2,7 +2,7 @@
 
 ### Project Overview
 
-This report investigates the relationship between flight delays and customer satisfaction for an airline company, using data analysis to derive insights and recommendations. The focus is on departure time as a critical metric for customer satisfaction.
+This report investigates the relationship between flight delays and customer satisfaction for an airline company, using Dplyr, Tidyr and ggplot2 in R to derive insights and recommendations. The focus is on departure time as a critical metric for customer satisfaction.
 
 ### Executive Summary
 
@@ -18,6 +18,8 @@ Analyze flight departure data to:
 
 - Current Performance:
 Only 53% of flights meet the industry benchmark for on-time departures (≤15 minutes from the scheduled time).
+![image](https://github.com/user-attachments/assets/3a2db554-b82f-4e62-91f2-3ea4b10f719f)
+
 
 - Connecting vs. Direct Flights:
 Delayed departures are more prevalent in connecting flights (62.5%) than in direct flights (45%), highlighting operational inefficiencies in handling transit passengers and cargo.
@@ -27,3 +29,24 @@ Business flights exhibit a higher proportion of delays (60%) compared to leisure
 
 - Flight Categories:
 "City Hopper" flights have the highest number of delays (~4,800), followed by intercontinental (~4,200) and holiday flights (~1,000), emphasizing route-specific challenges.
+
+### Recommendations
+
+- Chartered Planes for Business Travelers:
+Introduce chartered planes to reduce delays for premium-paying business customers, without disrupting schedules for other passengers.
+Operational Enhancements:
+
+- Allocate additional aircraft for short-haul and intercontinental routes to address capacity constraints.
+Process Optimization:
+Streamline critical processes, including immigration, refueling, and maintenance, to minimize delays.
+
+- Future Research:
+Expand data collection to include external factors like weather, crew scheduling, and airport-specific issues that impact delays, enabling a more comprehensive analysis.
+
+### Tools Used in the Analysis
+
+- Dplyr and tidyr were used to clean the dataset of 25,574 observations, ensuring the data was accurate and ready for analysis.
+- ggplot 2 was used for data visualization.
+
+##### Industry Standards Reference:
+IATA and Bureau of Transportation Statistics guidelines provided the benchmarks for on-time and delayed flights
