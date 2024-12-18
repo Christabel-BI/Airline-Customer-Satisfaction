@@ -52,8 +52,103 @@ Expand data collection to include external factors like weather, crew scheduling
 
 ### Tools Used in the Analysis
 
-- Dplyr and tidyr were used to clean and explore the dataset of 25,574 observations, ensuring the data was accurate and ready for analysis.
+- Dplyr and tidyr were used to clean, explore and manipulate the dataset of 25,574 observations, ensuring the data was accurate and ready for analysis.
 - ggplot 2 was used for data visualization.
 
 #### Industry Standards Reference:
 IATA and Bureau of Transportation Statistics guidelines provided the benchmarks for on-time and delayed flights
+
+### R codes used for Data Analysis
+
+R```
+#### call library ####
+
+library(readxl)
+library(tidyr)
+library(ggplot2)
+library(dplyr)  
+library(skimr)
+library(RColorBrewer)
+
+#### set working directory ####
+setwd("C:/Users/david/OneDrive/Documents/Airline")
+
+#### load data ####
+airline <- read_excel("airline-12.xlsx")
+
+#### Inspect data/data preparation ####
+# 27345 observations and 10 variables
+str(airline)
+summary(airline)
+
+airline<- airline %>% filter(route !="NA")
+
+airline<- airline %>% filter(departure !="NA")
+
+airline<- airline %>% filter(kids !="error", kids !=".")
+
+airline<- airline %>% filter(business !="NA")
+
+#### Data manipulation ####
+table(airline$departure)
+
+airline$departure <- ifelse(airline$departure == "delay < 30min", "delay", airline$departure)
+airline$departure <- ifelse(airline$departure == "delay < 90min", "delay", airline$departure)
+airline$departure <- ifelse(airline$departure == "delay > 90min", "delay", airline$departure)
+
+airline <- airline %>% mutate(ontime = ifelse(departure =="delay",1,0))
+
+table(airline$gender)
+airline$gender <- ifelse(airline$gender == "diverse", "others", airline$gender)
+airline$gender <- ifelse(airline$gender == "unknown/ don't want to say", "others", airline$gender)
+
+table(airline$connection)
+airline$connection <- ifelse(airline$connection == "connecting flight", "connection", airline$connection)
+
+summary(airline)
+skim(airline)
+
+#### Data visualization ####
+
+#### figure 1 (Distribution of departure) ####
+       airline%>%group_by(departure)%>%count(departure)
+
+      ggplot(airline%>%group_by(departure)%>%count(departure))+
+      geom_col(aes(departure, n, fill=departure))+
+      geom_text(aes(departure, n, label = paste(n), vjust = -0.3, fontface ="bold"))+ 
+      geom_text(aes(departure, n,label = paste(scales::percent(round(n/sum(n), digits = 2))),
+      group=departure), position = position_dodge(width = .9),vjust = 1.5, size=4, color="white", fontface ="bold") +
+      labs(title = "Delay and ontime flight departure", x = " ", y = "Number of flight departure") +
+      scale_fill_manual(values = c("darkred", "darkgreen")) +
+      theme(legend.title = element_blank(), legend.position = "bottom") +
+      theme_minimal() 
+
+#### figure 2  (Departure with connection)
+       ggplot(airline, aes(x = connection, fill = departure)) + 
+       geom_bar(position = "fill", width = 0.8) +
+       labs(title = "Effect of connecting flights", subtitle = "on departure" , x = "connection", y = "Proportion of departure flights") +
+       scale_fill_manual(values = c("darkred", "darkgreen"))+
+       theme(legend.title = element_blank()) +
+       theme_minimal()
+
+#### figure 3 (Departure with Business)
+      ggplot(airline, aes(x = business, fill = departure)) + 
+      geom_bar(position = "fill", width = 0.8) +
+      scale_fill_manual(values = c("darkred", "darkgreen")) +
+      labs(title = "Departure flights", subtitle = "by business and leisure" , x = "flight", y = "Proportion of departure flights") +
+      theme(legend.title = element_blank()) +
+      theme_minimal() 
+      
+#### figure 4 (Departure with type)
+      ggplot(airline, aes(x = type, fill = departure)) + 
+      geom_bar(width = 0.7, position = position_dodge(0.9)) +
+      scale_fill_manual(values = c("darkred", "darkgreen")) +
+      labs(title = "Departure", subtitle = "by business and leisure flights", x = "flight", y = "Number of flights") +
+      theme(legend.title = element_blank()) + 
+      theme_minimal()
+      
+    
+
+    
+
+
